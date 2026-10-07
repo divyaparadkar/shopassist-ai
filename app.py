@@ -92,14 +92,45 @@ st.markdown("""
     .status-delivered { background: rgba(16, 185, 129, 0.25); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
     .status-canceled { background: rgba(244, 63, 94, 0.25); color: #f43f5e; border: 1px solid rgba(244, 63, 94, 0.4); }
 
-    /* Buttons Override */
+    /* Streamlit Metrics Container Uniform Box Size */
+    [data-testid="stMetric"] {
+        background: rgba(28, 14, 48, 0.78) !important;
+        border: 1px solid rgba(244, 114, 182, 0.2) !important;
+        border-radius: 16px !important;
+        padding: 18px 20px !important;
+        box-shadow: 0 12px 35px -10px rgba(15, 7, 26, 0.7) !important;
+        height: 140px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        box-sizing: border-box !important;
+    }
+
+    [data-testid="stMetricLabel"] {
+        color: #d8b4fe !important;
+        font-weight: 700 !important;
+        font-size: 0.92rem !important;
+    }
+
+    [data-testid="stMetricValue"] {
+        color: #ec4899 !important;
+        font-weight: 800 !important;
+        font-size: 2.2rem !important;
+    }
+
+    /* Buttons Override - Uniform Box Sizes */
     .stButton > button {
         background: linear-gradient(135deg, #ec4899 0%, #d946ef 50%, #a855f7 100%) !important;
         color: white !important;
         border: none !important;
         border-radius: 10px !important;
         font-weight: 700 !important;
-        padding: 8px 16px !important;
+        padding: 10px 16px !important;
+        min-height: 44px !important;
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
         transition: all 0.2s ease !important;
         box-shadow: 0 4px 16px rgba(236, 72, 153, 0.4) !important;
     }
