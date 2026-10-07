@@ -118,19 +118,25 @@ st.markdown("""
         font-size: 2.2rem !important;
     }
 
-    /* Buttons Override - Uniform Box Sizes */
+    /* Buttons Override - Uniform Equal Box Sizes */
     .stButton > button {
         background: linear-gradient(135deg, #ec4899 0%, #d946ef 50%, #a855f7 100%) !important;
         color: white !important;
         border: none !important;
         border-radius: 10px !important;
         font-weight: 700 !important;
-        padding: 10px 16px !important;
-        min-height: 44px !important;
+        font-size: 0.85rem !important;
+        padding: 8px 12px !important;
+        height: 52px !important;
+        min-height: 52px !important;
+        max-height: 52px !important;
         width: 100% !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
+        text-align: center !important;
+        white-space: normal !important;
+        word-break: break-word !important;
         transition: all 0.2s ease !important;
         box-shadow: 0 4px 16px rgba(236, 72, 153, 0.4) !important;
     }
