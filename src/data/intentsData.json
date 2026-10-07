@@ -1,0 +1,173 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey there",
+        "Good morning",
+        "Good afternoon",
+        "Is anyone here?",
+        "Greetings"
+      ],
+      "responses": [
+        "Hello! Welcome to ShopAssist Support. How can I help you today?",
+        "Hi there! How may I assist you with your orders or account today?"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "Goodbye",
+        "See you later",
+        "Have a good day",
+        "Catch you later",
+        "Exit"
+      ],
+      "responses": [
+        "Goodbye! Have a wonderful day.",
+        "Thanks for visiting ShopAssist. Reach back out anytime you need help!"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "That was helpful",
+        "Awesome thanks",
+        "Appreciate your help"
+      ],
+      "responses": [
+        "You're very welcome!",
+        "Glad I could help! Is there anything else you need?"
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "order_status",
+      "patterns": [
+        "Where is my order?",
+        "Track my package",
+        "Order status",
+        "When will my shipment arrive?",
+        "Track shipment"
+      ],
+      "responses": [
+        "I can help track your order! Please enter your 6-digit Order ID (e.g., ORD-1024 or 123456)."
+      ],
+      "context_set": "awaiting_order_id"
+    },
+    {
+      "tag": "cancel_order",
+      "patterns": [
+        "Cancel my order",
+        "I want to stop my delivery",
+        "I bought the wrong item cancel it",
+        "Revoke order"
+      ],
+      "responses": [
+        "Orders can be canceled within 1 hour of placement. Please provide your Order ID to initiate cancellation."
+      ],
+      "context_set": "awaiting_order_id"
+    },
+    {
+      "tag": "return_refund",
+      "patterns": [
+        "How do I return an item?",
+        "Refund policy",
+        "I want my money back",
+        "Return process",
+        "Can I return damaged goods?"
+      ],
+      "responses": [
+        "We offer a 30-day return policy. Items must be in original condition with packaging. Refunds take 3-5 business days."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "payment_methods",
+      "patterns": [
+        "What payment methods do you take?",
+        "Can I pay with PayPal?",
+        "Do you accept Apple Pay?",
+        "Credit card options",
+        "Payment types"
+      ],
+      "responses": [
+        "We accept Visa, MasterCard, American Express, PayPal, and Apple Pay."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "store_hours",
+      "patterns": [
+        "What are your business hours?",
+        "When are you open?",
+        "Operating schedule",
+        "Support team hours"
+      ],
+      "responses": [
+        "Our digital store is open 24/7. Live customer service is available Monday through Friday, 8:00 AM to 8:00 PM EST."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "shipping_policy",
+      "patterns": [
+        "How much is shipping?",
+        "Free shipping threshold",
+        "Do you deliver internationally?",
+        "Delivery options"
+      ],
+      "responses": [
+        "Standard shipping is $4.99 and takes 3-5 days. Orders over $50 qualify for free standard shipping. Expedited is $12.99."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "reset_password",
+      "patterns": [
+        "I forgot my password",
+        "Reset password",
+        "Can't log in to my account",
+        "Locked out of my profile"
+      ],
+      "responses": [
+        "To reset your password, visit the login page and click 'Forgot Password'. A security link will be emailed to you."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "human_agent",
+      "patterns": [
+        "Speak to a real person",
+        "I want an agent",
+        "Transfer me to a human",
+        "Customer service representative",
+        "Talk to operator"
+      ],
+      "responses": [
+        "Connecting you with an agent. Our team is available Mon-Fri 8am-8pm EST. You can also email support@example.com."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "bot_identity",
+      "patterns": [
+        "Who are you?",
+        "Are you a bot?",
+        "What is your name?",
+        "Tell me about yourself"
+      ],
+      "responses": [
+        "I am ShopBot, your virtual support assistant powered by natural language processing!"
+      ],
+      "context_set": ""
+    }
+  ]
+}
