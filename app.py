@@ -733,6 +733,36 @@ with tab_orders:
         selected_ord_id = st.selectbox("Select Order ID to Inspect:", list(st.session_state['orders'].keys()))
         ord_obj = st.session_state['orders'][selected_ord_id]
 
+        st.markdown("<br>", unsafe_allow_html=True)
+        st.markdown("##### ➕ Add Custom Order ID")
+        with st.form("add_order_form"):
+            add_id = st.text_input("Order ID (e.g. ORD-9999):", placeholder="ORD-9999")
+            add_cust = st.text_input("Customer Name:", placeholder="Divya Paradkar")
+            add_total = st.number_input("Total Amount ($):", min_value=1.0, value=89.99, step=5.0)
+            add_status = st.selectbox("Initial Status:", ["processing", "in_transit", "delivered"])
+            submit_add_ord = st.form_submit_button("➕ Create & Add Order ID")
+
+            if submit_add_ord and add_id:
+                clean_ord_id = add_id.strip().upper()
+                st.session_state['orders'][clean_ord_id] = {
+                    "id": clean_ord_id,
+                    "customer": add_cust.strip() or "Valued Customer",
+                    "date": datetime.now().strftime("%Y-%m-%d %H:%M"),
+                    "status": add_status,
+                    "statusText": "Processing" if add_status == "processing" else "In Transit" if add_status == "in_transit" else "Delivered",
+                    "carrier": "FedEx Express" if add_status != "processing" else "Preparing for Shipment",
+                    "trackingNumber": f"FX-{random.randint(10000000, 99999999)}",
+                    "estimatedDelivery": "In 2-3 Business Days",
+                    "shippingAddress": "456 Tech Park Way, Suite 100",
+                    "items": [{"name": "Custom ShopAssist Order Item", "qty": 1, "price": float(add_total), "image": "🎁"}],
+                    "total": float(add_total),
+                    "paymentMethod": "Credit Card",
+                    "canCancel": add_status == "processing",
+                    "cancelReason": "Order has already shipped." if add_status != "processing" else ""
+                }
+                st.success(f"Added custom Order ID #{clean_ord_id}!")
+                st.rerun()
+
     with col_ord_right:
         st.markdown(f"#### Order Inspector: <span style='color:#ec4899;'>#{ord_obj['id']}</span>", unsafe_allow_html=True)
         
